@@ -1,26 +1,21 @@
 //#include <iostream>
 //using namespace std;
 //
-//int main(void) {
-//	int math = 0, korean = 0;
-//	int sum = 0;		//초기화를 안해도 괜찮다.
+//int main() {
 //
-//	cout << "수학 : ";
-//	cin >> math;
+//	int m;
+//	float r;
+//	float money;
 //
-//	cout << "국어 : ";
-//	cin >> korean;
+//	cout << "원금(m)을 입력하시오 : ";
+//	cin >> m;
 //
-//	sum = math + korean;
-//	
-//	cout << sum << endl;
+//	cout << "이율(r%)을 입력하시오 : ";
+//	cin >> r;
 //
-//	if (sum > 180) {
-//		cout << "참 잘했어요" << endl;
-//	}
-//	else {
-//		cout << "좀 더 노력하세요" << endl;
-//	}
+//	money = m * (1 + r / 100);
+//
+//	cout << "원리금(money) : " << money << endl;
 //
 //	return 0;
 //}
