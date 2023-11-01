@@ -1,32 +1,36 @@
 //#include <iostream>
 //using namespace std;
 //
-//int main() {
+//void print(int n);		//1부터 n까지 출력하는 함수
 //
-//	int m;
-//	double r;
-//	double s;
-//	int y;
+//int main() {
+//	int n;
+//
+//	cout << "n을 입력(3부터 9사이) : ";
+//	cin >> n;
+//
+//	print(n);
+//}
+//
+//void print(int n) {
 //	int i = 1;
 //
-//	cout << "원금(m)을 입력하시오 : ";
-//	cin >> m;
+//	while (i <= n) {
+//		int j = 1;
+//		while (j <= i) {
+//			cout << j;
+//			j++;
+//		}
 //
-//	cout << "이율(r%)을 입력하시오 : ";
-//	cin >> r;
+//		j = i - 1;
+//		while (j >= 1) {
+//			cout << j;
+//			j--;
+//		}
 //
-//	cout << "예치 기간(y년)을 입력하시오 : ";
-//	cin >> y;
-//
-//	while (i <= y) {
-//		/*s = m * (1 + r / 100);
-//		m = s;*/
-//		m= m * (1 + r / 100);
-//		
-//		cout << i << "년간의 원리금 : " << m << endl;
+//		cout << "\n";
 //		i++;
 //	}
-//	cout << "원리금 : " << m << endl;
 //
-//	return 0;
+//	return;
 //}
