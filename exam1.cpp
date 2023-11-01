@@ -1,29 +1,79 @@
-//#include <iostream>
-//using namespace std;
-//
-//void print(int n);		//1부터 n까지 출력하는 함수
-//
-//int main() {
-//	int n;
-//
-//	cout << "n을 입력(3부터 9사이) : ";
-//	cin >> n;
-//
-//	print(n);
-//}
-//
-//void print(int n) {
-//	int i = 1;
-//
-//	while (i <= n) {
-//		int j = 1;
-//		while (j <= i) {
-//			cout << j;
-//			j++;
-//		}
-//		cout << "\n";
-//		i++;
-//	}
-//
-//	return;
-//}
+#include <iostream>
+#define SIZE 10
+using namespace std;
+
+
+int main() {
+	int num[SIZE] = { 0 };
+
+	cout << "10개의 정수 입력" << endl;
+
+	for (int i = 0; i < SIZE; i++) {
+		cout << "num[" << i << "] = ";
+		cin >> num[i];
+	}
+
+	//int max_num = num[0];
+	//int min_num = num[0];
+
+	////최댓값
+	//for (int i = 0; i < SIZE; i++) {
+	//	if (max_num <= num[i]) {
+	//		max_num = num[i];
+	//	}
+	//	else {
+	//		max_num = max_num;
+	//	}
+	//}
+
+	////최솟값
+	//for (int j = 0; j < SIZE; j++) {
+	//	if (min_num >= num[j]) {
+	//		min_num = num[j];
+	//	}
+	//	else {
+	//		min_num = min_num;
+	//	}
+	//}
+
+	//cout << "최댓값: " << max_num << ", " << "최솟값: " << min_num << endl;
+
+
+	int maxi = 0;
+	int mini = 0;
+
+	//최댓값
+	for (int i = 0; i < SIZE; i++) {
+		if (num[maxi] <= num[i]) {
+			maxi = i;
+		}
+		else {
+			maxi = maxi;
+		}
+	}
+
+	//최솟값
+	for (int j = 0; j < SIZE; j++) {
+		if (num[mini] >= num[j]) {
+			mini = j;
+		}
+		else {
+			mini = mini;
+		}
+	}
+
+	cout << "최댓값: " << maxi << ", " << "최솟값: " << mini << endl;
+
+	//교수님 풀이
+	for (int i = 0, j = 0; i < SIZE; i++) {
+		if (num[maxi] <= num[i]) {
+			maxi = i;
+		}
+		if (num[mini] >= num[j]) {
+			mini = j;
+		}
+	}
+		
+
+	return 0;
+}
