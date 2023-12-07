@@ -1,35 +1,19 @@
 #include <iostream>
-#include "myheader.h"
+#include "def.h"
 using namespace std;
 
 int main() {
-	const int N = 100;
-	int data[N], d, i = 0;
+	int num_bin;
 
-	while(i < N) {
-		cin >> d;
-		if (d < 0) break;
-		if (!search(d, data, i))
-			data[i++] = d;
-	}
+	cout << "2진수 입력:";
+	cin >> num_bin;
 
-	print(data, i);
+	cout << bin2dec(num_bin, 1) << endl;
+
 	return 0;
 }
 
-bool search(int key, int d[], int size) {
-	for (int i = 0; i < size; i++) {
-		if (d[i] == key) return true;
-	}
-
-	return false;
-}
-
-void print(int data[], int size) {
-
-	for (int i = 0; i < size; i++) {
-		cout << data[i] << " ";
-	}
-
-	cout << endl;
+int bin2dec(int n, int power) {
+	if (n == 0)return 0;
+	return (n % 10) * power + bin2dec(n / 10, power * 2);
 }

@@ -1,52 +1,33 @@
 #include <iostream>
-#include "myheader.h"
+#include "def.h"
 using namespace std;
 
 int main() {
+	int num_dec;
 
-	const int N = 100;
-	int data[N];
+	cout << "10진수 입력:";
+	cin >> num_dec;
 
-	read_data(data, N);
-	double ave = get_ave(data, N);
-	int n1 = count(ave, data, N, true);
-	int n2 = count(ave, data, N, false);
-
-	cout << "평균 이상은 " << n1 << "개이고, ";
-	cout << "평균 미만은 " << n2 << "개이다." << endl;
+	dec2bin(num_dec);
 
 	return 0;
 }
 
-void read_data(int d[], int size) {
-	for (int i = 0; i < size - 1; i++) {
-		cin >> d[i];
+//void dec2bin(int n) {
+//	while (n >= 1) {
+//		int t = 0;
+//
+//		t = n % 2;
+//		n = n / 2;
+//
+//		cout << t;
+//	}
+//	// 차순 바꾸기
+//}
 
-		if (d[i] < 0)return;
-	}
-	d[size - 1] = -1;
-}
+void dec2bin(int n) {
+	if (n > 2) cout << n;
 
-double get_ave(int d[], int size) {
-	int sum = 0, i;
-
-	for (i = 0; d[i] >= 0; i++) {
-		//if (d[i] < 0)break;
-		sum += d[i];
-	}
-	return sum / (double) i;
-}
-
-int count(double ave, int d[], int size, bool flag) {
-	int n = 0;
-
-	for (int i = 0; d[i] >= 0; i++) {
-		/*if (flag == true && d[i] >= ave) n++;
-		else if (flag == false && d[i] < ave)n++;*/
-
-		if (flag && d[i] >= ave) n++;
-		else if (!flag && d[i] < ave)n++;
-	}
-
-	return n;
+	dec2bin(n / 2);
+	cout << n % 2;
 }
